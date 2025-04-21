@@ -24,6 +24,7 @@
 * ✅ 下载抖音无水印视频/图集
 * ✅ 下载抖音无水印实况/动图
 * ✅ 下载最高画质视频文件
+* ✅ 下载 TikTok 视频原画
 * ✅ 下载 TikTok 无水印视频/图集
 * ✅ 下载抖音账号发布/喜欢/收藏/收藏夹作品
 * ✅ 下载 TikTok 账号发布/喜欢作品
@@ -76,17 +77,19 @@
 [![终端模式截图](docs/终端交互模式截图CN2.png)](https://www.bilibili.com/video/BV1RAcHe5EpF/)
 *****
 [![终端模式截图](docs/终端交互模式截图CN3.png)](https://www.bilibili.com/video/BV1RAcHe5EpF/)
-<br><br>
+
 **Web UI 交互模式：**
-<br><br>
+
 ![WebUI模式截图](docs/WebUI模式截图1.png)
 *****
 ![WebUI模式截图](docs/WebUI模式截图2.png)
 *****
 ![WebUI模式截图](docs/WebUI模式截图3.png)
-<br><br>
+
 **Web API 接口模式：**
-<br><br>
+
+**访问 `http://127.0.0.1:5555/docs` 或者 `http://127.0.0.1:5555/redoc` 可以查阅自动生成的文档！**
+
 ![WebAPI模式截图](docs/WebAPI模式截图.png)
 
 # 📈 项目状态
@@ -100,8 +103,8 @@
 
 ## 快速入门
 
-<p>⭐ Mac OS、Windows 10 及以上用户可前往 <a href="https://github.com/JoeanAmier/TikTokDownloader/releases/latest">Releases</a> 下载已编译的程序，开箱即用！</p>
-<p>⭐ 本项目包含手动构建可执行文件的 GitHub Actions，使用者可以随时使用 GitHub Actions 将最新源码构建为可执行文件！</p>
+<p>⭐ Mac OS、Windows 10 及以上用户可前往 <a href="https://github.com/JoeanAmier/TikTokDownloader/releases/latest">Releases</a> 或者 <a href="https://github.com/JoeanAmier/TikTokDownloader/actions">Actions</a> 下载已编译的程序，开箱即用！</p>
+<p>⭐ 本项目包含自动构建可执行文件的 GitHub Actions，使用者可以随时使用 GitHub Actions 将最新源码构建为可执行文件！</p>
 <p><strong>注意：Mac OS 平台可执行文件 <code>main</code> 可能需要从终端命令行启动；受设备限制，Mac OS 平台可执行文件尚未经过测试，无法保证可用性！</strong></p>
 <hr>
 <ol>
@@ -130,10 +133,10 @@
 <ol><b>从浏览器获取 Cookie（推荐）</b>
 <li>选择 <code>从浏览器获取 Cookie</code> 选项，按照提示选择浏览器类型</li>
 </ol>
-<ol><b>扫码登录获取 Cookie（弃用）</b>
-<li>选择 <code>扫码登录获取 Cookie</code> 选项，程序会显示登录二维码图片，并使用默认应用打开图片</li>
-<li>使用抖音 APP 扫描二维码并登录账号</li>
-<li>按照提示操作，将 Cookie 写入配置文件</li>
+<ol><b><del>扫码登录获取 Cookie（弃用）</del></b>
+<li><del>选择 <code>扫码登录获取 Cookie</code> 选项，程序会显示登录二维码图片，并使用默认应用打开图片</del></li>
+<li><del>使用抖音 APP 扫描二维码并登录账号</del></li>
+<li><del>按照提示操作，将 Cookie 写入配置文件</del></li>
 </ol>
 </li>
 <li>返回程序界面，依次选择 <code>终端交互模式</code> -> <code>批量下载链接作品(通用)</code> -> <code>手动输入待采集的作品链接</code></li>
@@ -203,7 +206,6 @@
 <li>程序下载文件时会先将文件下载至临时文件夹，下载完成后再移动至储存文件夹；程序运行结束时会清空临时文件夹</li>
 <li><code>批量下载收藏作品模式</code> 目前仅支持下载当前已登录 Cookie 对应账号的收藏作品，暂不支持多账号</li>
 <li>如果想要程序使用代理请求数据，必须在 <code>settings.json</code> 设置 <code>proxy</code> 参数，否则程序不会使用代理</li>
-<li>退出程序时，请以正常方式结束运行或者按下 Ctrl + C 结束运行，不要直接点击终端窗口的关闭按钮结束运行，否则会导致数据丢失</li>
 <li>如果您的计算机没有合适的程序编辑 JSON 文件，建议使用 <a href="https://try8.cn/tool/format/json">JSON 在线工具</a> 编辑配置文件内容</li>
 <li>当程序请求用户输入内容或链接时，请注意避免输入的内容或链接包含换行符，这可能会导致预期之外的问题</li>
 <li>本项目不会支持付费作品下载，请勿反馈任何关于付费作品下载的问题</li>
@@ -246,7 +248,7 @@
 #### 3. 手动触发打包流程
 
 1. 在您 Fork 的仓库中，点击顶部的 **Actions** 选项卡
-2. 找到名为 **手动构建可执行文件** 的工作流
+2. 找到名为 **构建可执行文件** 的工作流
 3. 点击右侧的 **Run workflow** 按钮：
     - 选择 **master** 或者 **develop** 分支
     - 点击 **Run workflow**
@@ -322,7 +324,7 @@ A: 由于权限限制，您无法直接触发主仓库的 Actions。请通过 Fo
 <li>在开始开发前，请从 <code>develop</code> 分支拉取最新的代码，以此为基础进行修改；这有助于避免合并冲突并保证您的改动基于最新的项目状态。</li>
 <li>如果您的更改涉及多个不相关的功能或问题，请将它们分成多个独立的提交或拉取请求。</li>
 <li>每个拉取请求应尽可能专注于单一功能或修复，以便于代码审查和测试。</li>
-<li>遵循现有的代码风格；请确保您的代码与项目中已有的代码风格保持一致。</li>
+<li>遵循现有的代码风格；请确保您的代码与项目中已有的代码风格保持一致；建议使用 Ruff 工具保持代码格式规范。</li>
 <li>编写可读性强的代码；添加适当的注释帮助他人理解您的意图。</li>
 <li>每个提交都应该包含一个清晰、简洁的提交信息，以描述所做的更改。提交信息应遵循以下格式：<code>&lt;类型&gt;: &lt;简短描述&gt;</code></li>
 <li>当您准备提交拉取请求时，请优先将它们提交到 <code>develop</code> 分支；这是为了给维护者一个缓冲区，在最终合并到 <code>master</code>
@@ -345,8 +347,8 @@ A: 由于权限限制，您无法直接触发主仓库的 Actions。请通过 Fo
 </ul>
 <p>✨ <b>作者的其他开源项目：</b></p>
 <ul>
-<li><b>XHS-Downloader（小红书）</b>：<a href="https://github.com/JoeanAmier/XHS-Downloader">https://github.com/JoeanAmier/XHS-Downloader</a></li>
-<li><b>KS-Downloader（快手）</b>：<a href="https://github.com/JoeanAmier/KS-Downloader">https://github.com/JoeanAmier/KS-Downloader</a></li>
+<li><b>XHS-Downloader（小红书、XiaoHongShu、RedNote）</b>：<a href="https://github.com/JoeanAmier/XHS-Downloader">https://github.com/JoeanAmier/XHS-Downloader</a></li>
+<li><b>KS-Downloader（快手、KuaiShou）</b>：<a href="https://github.com/JoeanAmier/KS-Downloader">https://github.com/JoeanAmier/KS-Downloader</a></li>
 </ul>
 
 # ♥️ 支持项目
@@ -410,3 +412,4 @@ A: 由于权限限制，您无法直接触发主仓库的 Actions。请通过 Fo
 * https://github.com/lxml/lxml
 * https://ffmpeg.org/ffmpeg-all.html
 * https://html5up.net/hyperspace
+* https://www.tikwm.com/

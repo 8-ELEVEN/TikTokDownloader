@@ -25,6 +25,7 @@
 * ✅ Download DouYin video/image without watermarks
 * ✅ Download DouYin live photo without watermarks
 * ✅ Download the highest quality video file
+* ✅ Download TikTok video source files
 * ✅ Download TikTok video/image without watermarks
 * ✅ Download of DouYin account posts/liked/favorites works
 * ✅ Download of TikTok account posts/liked works
@@ -77,17 +78,19 @@
 [![终端模式截图](docs/终端交互模式截图EN2.png)](https://www.bilibili.com/video/BV1RAcHe5EpF/)
 *****
 [![终端模式截图](docs/终端交互模式截图EN3.png)](https://www.bilibili.com/video/BV1RAcHe5EpF/)
-<br><br>
+
 **Web UI interaction mode：**
-<br><br>
+
 ![WebUI模式截图](docs/WebUI模式截图1.png)
 *****
 ![WebUI模式截图](docs/WebUI模式截图2.png)
 *****
 ![WebUI模式截图](docs/WebUI模式截图3.png)
-<br><br>
+
 **Web API mode：**
-<br><br>
+
+**Open http://127.0.0.1:5555/docs or http://127.0.0.1:5555/redoc to access the automatically generated documentation!**
+
 ![WebAPI模式截图](docs/WebAPI模式截图.png)
 
 # 📈 Project Status
@@ -104,8 +107,8 @@
 
 ## Quick Start
 
-<p>⭐ Mac OS and Windows 10 and above users can go to <a href="https://github.com/JoeanAmier/TikTokDownloader/releases/latest">Releases</a> to download the compiled program, ready to use!</p>
-<p>⭐ This project includes GitHub Actions for manually building executable files. Users can use GitHub Actions to build the latest source code into executable files at any time!</p>
+<p>⭐ Mac OS and Windows 10 and above users can go to <a href="https://github.com/JoeanAmier/TikTokDownloader/releases/latest">Releases</a> or <a href="https://github.com/JoeanAmier/TikTokDownloader/actions">Actions</a> to download the compiled program, ready to use!</p>
+<p>⭐ This project includes GitHub Actions for automatic building executable files. Users can use GitHub Actions to build the latest source code into executable files at any time!</p>
 <p><strong>Note: The executable file <code>main</code> on Mac OS may need to be started from the terminal command line. Due to device limitations, the executable file on the Mac OS platform has not been tested, and its usability cannot be guaranteed!</strong></p>
 <hr>
 <ol>
@@ -134,10 +137,10 @@
 <ol><b>Get Cookie from Browser (recommended)</b>
 <li>Select the option <code>Get Cookie from Browser</code> and follow the prompts to choose the browser type.</li>
 </ol>
-<ol><b>Scan code login to get Cookie (deprecated)</b>
-<li>Select the option <code>Scan code login to get Cookie</code>, and the program will display a login QR code image and open the image with the default application.</li>
-<li>Use the DouYin APP to scan the QR code and log into your account.</li>
-<li>Follow the prompts to write the Cookie into the configuration file.</li>
+<ol><b><del>Scan code login to get Cookie (deprecated)</del></b>
+<li><del>Select the option <code>Scan code login to get Cookie</code>, and the program will display a login QR code image and open the image with the default application.</del></li>
+<li><del>Use the DouYin APP to scan the QR code and log into your account.</del></li>
+<li><del>Follow the prompts to write the Cookie into the configuration file.</del></li>
 </ol>
 </li>
 <li>Return to the program interface, sequentially select <code>Terminal interactive mode</code> -> <code>Batch download link works (general)</code> -> <code>Manually enter the link of the works to be collected</code>.</li>
@@ -207,9 +210,8 @@
 <li>To obtain data for posts made by a private account, a logged-in Cookie is required, and the logged-in account must follow the private account.</li>
 <li>When batch downloading account posts works or mix works, if the corresponding nickname or mark parameter changes, the program will automatically update the nickname and mark parameter in the file names of the downloaded works.</li>
 <li>When downloading files, the program first downloads them to a temporary folder and then moves them to the storage folder upon completion. The temporary folder will be emptied when the program ends.</li>
-<li>The <code>Batch Download Favorites Works Mode</code> currently only supports downloading favorited works for the account corresponding to the currently logged-in Cookie and does not support multiple accounts.</li>
+<li>The <code>Batch Download Favorites Works Mode</code> currently only supports downloading Favorites works for the account corresponding to the currently logged-in Cookie and does not support multiple accounts.</li>
 <li>If you want the program to use a proxy to request data, you must set the <code>proxy</code> parameter in <code>settings.json</code>; otherwise, the program will not use a proxy.</li>
-<li>To exit the program, please end it in a normal way or by pressing Ctrl + C. Do not directly close the terminal window, as this may result in data loss.</li>
 <li>If your computer does not have a suitable program for editing JSON files, we recommend using the <a href="https://try8.cn/tool/format/json">JSON Online Tool</a> to edit the configuration file content.</li>
 <li>When the program prompts the user to input content or links, please be careful to avoid including newline characters, as this may cause unexpected issues.</li>
 <li>This project does not support downloading paid works. Please do not report any issues related to downloading paid works.</li>
@@ -255,7 +257,7 @@ the program based on the latest source code!
 #### 3. Manually Trigger the Build Process
 
 1. In your forked repository, click the **Actions** tab at the top
-2. Find the workflow named **Manual Build of Executable File**
+2. Find the workflow named **构建可执行文件**
 3. Click the **Run workflow** button on the right:
     - Select the **master** or **develop** branch
     - Click **Run workflow**
@@ -336,7 +338,7 @@ repository to execute the build process
 <li>Before starting development, please pull the latest code from the <code>develop</code> branch as the basis for your modifications; this helps avoid merge conflicts and ensures your changes are based on the latest state of the project.</li>
 <li>If your changes involve multiple unrelated features or issues, please split them into several independent commits or pull requests.</li>
 <li>Each pull request should focus on a single feature or fix as much as possible, to facilitate code review and testing.</li>
-<li>Follow the existing coding style; make sure your code is consistent with the style already present in the project.</li>
+<li>Follow the existing coding style; make sure your code is consistent with the style already present in the project; please use the Ruff tool to maintain code formatting standards.</li>
 <li>Write code that is easy to read; add appropriate annotation to help others understand your intentions.</li>
 <li>Each commit should include a clear and concise commit message describing the changes made. The commit message should follow this format: <code>&lt;type&gt;: &lt;short description&gt;</code></li>
 <li>When you are ready to submit a pull request, please prioritize submitting them to the <code>develop</code> branch; this provides maintainers with a buffer zone for additional testing and review before final merging into the <code>master</code> branch.</li>
@@ -357,8 +359,8 @@ repository to execute the build process
 </ul>
 <p>✨ <b>The author's other open-source projects:</b></p>
 <ul>
-<li><b>XHS-Downloader (Xiaohongshu/小红书)</b>: <a href="https://github.com/JoeanAmier/XHS-Downloader">https://github.com/JoeanAmier/XHS-Downloader</a></li>
-<li><b>KS-Downloader (Kuaishou/快手)</b>: <a href="https://github.com/JoeanAmier/KS-Downloader">https://github.com/JoeanAmier/KS-Downloader</a></li>
+<li><b>XHS-Downloader（小红书、XiaoHongShu、RedNote）</b>：<a href="https://github.com/JoeanAmier/XHS-Downloader">https://github.com/JoeanAmier/XHS-Downloader</a></li>
+<li><b>KS-Downloader（快手、KuaiShou）</b>：<a href="https://github.com/JoeanAmier/KS-Downloader">https://github.com/JoeanAmier/KS-Downloader</a></li>
 </ul>
 
 # ♥️ Support the Project
@@ -422,3 +424,4 @@ repository to execute the build process
 * https://github.com/lxml/lxml
 * https://ffmpeg.org/ffmpeg-all.html
 * https://html5up.net/hyperspace
+* https://www.tikwm.com/

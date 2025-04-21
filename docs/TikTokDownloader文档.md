@@ -15,7 +15,7 @@
 </div>
 <br>
 <p>🔥 <b>TikTok 发布/喜欢/合辑/直播/视频/图集/音乐；抖音发布/喜欢/收藏/收藏夹/视频/图集/实况/直播/音乐/合集/评论/账号/搜索/热榜数据采集工具：</b>完全开源，基于 HTTPX 模块实现的免费数据采集和文件下载工具；批量下载抖音账号发布、喜欢、收藏、收藏夹作品；批量下载 TikTok 账号发布、喜欢作品；下载抖音链接或 TikTok 链接作品；获取抖音直播推流地址；下载抖音直播视频；获取 TikTok 直播推流地址；下载 TikTok 直播视频；采集抖音作品评论数据；批量下载抖音合集作品；批量下载 TikTok 合辑作品；采集抖音账号详细数据；采集抖音用户 / 作品 / 直播搜索结果；采集抖音热榜数据。</p>
-<p>⭐ <b>文档对应项目版本：<code>5.5</code>；文档内容正在完善中，如有发现任何错误或描述模糊之处，请告知作者以便改进！</b></p>
+<p>⭐ <b>文档对应项目版本：<code>5.6 Beta</code>；文档内容正在完善中，如有发现任何错误或描述模糊之处，请告知作者以便改进！</b></p>
 <hr>
 <h1>快速入门</h1>
 <p>⭐ 本项目包含手动构建可执行文件的 GitHub Actions，使用者可以随时使用 GitHub Actions 将最新源码构建为可执行文件！</p>
@@ -45,10 +45,10 @@
 <ol><b>从浏览器获取 Cookie（推荐）</b>
 <li>选择 <code>从浏览器获取 Cookie</code> 选项，按照提示选择浏览器类型</li>
 </ol>
-<ol><b>扫码登录获取 Cookie（弃用）</b>
-<li>选择 <code>扫码登录获取 Cookie</code> 选项，程序会显示登录二维码图片，并使用默认应用打开图片</li>
-<li>使用抖音 APP 扫描二维码并登录账号</li>
-<li>按照提示操作，将 Cookie 写入配置文件</li>
+<ol><b><del>扫码登录获取 Cookie（弃用）</del></b>
+<li><del>选择 <code>扫码登录获取 Cookie</code> 选项，程序会显示登录二维码图片，并使用默认应用打开图片</del></li>
+<li><del>使用抖音 APP 扫描二维码并登录账号</del></li>
+<li><del>按照提示操作，将 Cookie 写入配置文件</del></li>
 </ol>
 </li>
 <li>返回程序界面，依次选择 <code>终端交互模式</code> -> <code>批量下载链接作品(抖音)</code> -> <code>手动输入待采集的作品链接</code></li>
@@ -182,11 +182,11 @@ https://www.douyin.com/note/123456789
 
 <h2>直播下载</h2>
 <p><code>获取直播推流地址</code> 功能需要调用 <code>ffmpeg</code> 下载直播文件；程序会优先调用系统环境的 <code>ffmpeg</code>，其次调用 <code>ffmpeg</code> 参数指定的 <code>ffmpeg</code>，如果 <code>ffmpeg</code> 不可用，程序将不支持直播下载！</p>
-<p>建议前往 <a href="https://ffmpeg.org/download.html">官方网站</a> 获取 <code>ffmpeg</code> 程序！</p>
+<p>建议前往 <a href="https://ffmpeg.org/download.html">官方网站</a> 或者 <a href="https://github.com/BtbN/FFmpeg-Builds">FFmpeg-Builds</a> 获取 <code>ffmpeg</code> 程序！</p>
 <p>项目开发时所用的 FFmpeg 版本信息如下，不同版本的 FFmpeg 可能会有差异；若功能异常，请向作者反馈！</p>
 <pre>
-ffmpeg version N-116650-g7897b0beed-20240815 Copyright (c) 2000-2024 the FFmpeg developers
-built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
+ffmpeg version n7.1.1-6-g48c0f071d4-20250405 Copyright (c) 2000-2025 the FFmpeg developers
+built with gcc 14.2.0 (crosstool-NG 1.27.0.18_7458341)
 </pre>
 <h2>功能简介</h2>
 <table>
@@ -241,9 +241,9 @@ built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
 <td align="center">文件下载，数据采集</td>
 </tr>
 </tbody></table>
-<h2>关闭平台功能</h2>
-<p>本项目支持抖音平台和 TikTok 平台的数据采集和文件下载功能，平台功能默认开启，如果不需要使用平台的任何功能，可以编辑配置文件关闭平台功能。</p>
-<p>本项目内置参数更新机制，程序会周期性更新抖音与 TikTok 请求的部分参数，以保持参数的有效性（或许没有效果？），该功能无法防止参数失效，参数失效后需要重新写入 Cookie；关闭平台功能后，对应平台的参数更新功能将会禁用！</p>
+<h2><del>关闭平台功能</del></h2>
+<p><del>本项目支持抖音平台和 TikTok 平台的数据采集和文件下载功能，平台功能默认开启，如果不需要使用平台的任何功能，可以编辑配置文件关闭平台功能。</del></p>
+<p><del>本项目内置参数更新机制，程序会周期性更新抖音与 TikTok 请求的部分参数，以保持参数的有效性（或许没有效果？），该功能无法防止参数失效，参数失效后需要重新写入 Cookie；关闭平台功能后，对应平台的参数更新功能将会禁用！</del></p>
 <h1>配置文件</h1>
 <p>配置文件：项目根目录下的 <code>settings.json</code> 文件，可以自定义设置程序部分运行参数。</p>
 <p>若无特殊需求，大部分配置参数无需修改，直接使用默认值即可。</p>
@@ -287,8 +287,8 @@ built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
 </tr>
 <tr>
 <td align="center"><i>latest</i></td>
-<td align="center">str</td>
-<td align="center">作品最晚发布日期，格式：<code>2023/1/1</code>；<strong>属于 accounts_urls 子参数</strong></td>
+<td align="center">str | float | int</td>
+<td align="center">作品最晚发布日期，格式：<code>2023/1/1</code>、<code>整数</code>、<code>浮点数</code>；设置为数值代表基于当天的前 XX 天，<strong>属于 accounts_urls 子参数</strong></td>
 <td align="center">不限制</td>
 </tr>
 <tr>
@@ -405,7 +405,7 @@ built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
 <td align="center">false</td>
 </tr>
 <tr>
-<td align="center">original_cover</td>
+<td align="center">static_cover</td>
 <td align="center">bool</td>
 <td align="center">是否下载视频作品静态封面图</td>
 <td align="center">false</td>
@@ -477,13 +477,13 @@ built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
 <td align="center">无</td>
 </tr>
 <tr>
-<td align="center">douyin_platform</td>
+<td align="center"><del>douyin_platform</del></td>
 <td align="center">bool</td>
 <td align="center"><a href="#supplement"><sup>5</sup></a>是否启用抖音平台功能</td>
 <td align="center">true</td>
 </tr>
 <tr>
-<td align="center">tiktok_platform</td>
+<td align="center"><del>tiktok_platform</del></td>
 <td align="center">bool</td>
 <td align="center"><a href="#supplement"><sup>5</sup></a>是否启用 TikTok 平台功能</td>
 <td align="center">true</td>
@@ -509,7 +509,7 @@ built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
 <li>设置为 <code>favorite</code> 时，需要确保账号喜欢作品公开可见，或者配置对应账号的登录 Cookie</li>
 <li>该参数仅在部分模式和功能中生效，如果不需要使用相应的模式和功能，无需设置该参数</li>
 <li>必须设置平台的 Cookie 才能使用该平台的数据采集和文件下载功能</li>
-<li>如果不需要使用该平台的任何功能，可以将该参数设置为 <code>false</code></li>
+<li><del>如果不需要使用该平台的任何功能，可以将该参数设置为 <code>false</code></del></li>
 </ol>
 </div>
 <h2>配置示例</h2>
@@ -569,7 +569,7 @@ built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
   },
   "cookie_tiktok": "参数规则与 cookie 一致",
   "dynamic_cover": false,
-  "original_cover": false,
+  "static_cover": false,
   "proxy": "http://127.0.0.1:9999",
   "proxy_tiktok": "参数规则与 proxy 一致",
   "twc_tiktok": "",
@@ -677,6 +677,7 @@ built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
 <p>如果已经采集某账号的全部发布作品，建议设置 <code>earliest</code> 和 <code>latest</code> 参数以减少后续采集请求次数，提高程序运行效率；<code>accounts_urls_tiktok</code>参数规则一致。</p>
 <p>示例：将 <code>earliest</code> 参数设置为 <code>2023/12/1</code>，程序获取账号发布作品数据时，不会获取早于 <code>2023/12/1</code> 的作品数据。</p>
 <p>示例：将 <code>earliest</code> 参数设置为 <code>30</code>，<code>latest</code> 参数设置为 <code>2024/12/1</code>，程序获取账号发布作品数据时，仅获取 2024 年 12 月 1 日当天及之前 30 天内发布的作品数据。</p>
+<p>示例：将 <code>earliest</code> 参数设置为 <code>15</code>，<code>latest</code> 参数设置为 <code>5</code>，程序获取账号发布作品数据时，仅获取前 5 天 ~ 前 20 天之间发布的作品数据。</p>
 <h3>文件储存路径</h3>
 
 ```json
@@ -789,9 +790,9 @@ built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
 <li>设置非法字符替换规则</li>
 <li>开启服务器模式局域网访问功能</li>
 <li>设置服务器模式主机及端口</li>
-<li>设置平台参数更新间隔</li>
+<li><del>设置平台参数更新间隔</del></li>
 <li>设置彩色交互提示颜色</li>
-<li>设置请求数据延时间隔</li>
+<li><del>设置请求数据延时间隔</del></li>
 <li>设置自定义作品筛选规则</li>
 <li>设置分批获取数据策略</li>
 <li>设置服务器模式参数验证</li>
@@ -806,7 +807,7 @@ built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
 <p>成功写入配置文件后，程序会提示当前 Cookie 登录状态！</p>
 <p>Windows 系统需要以管理员身份运行程序才能读取 Chromium、Chrome、Edge 浏览器 Cookie！</p>
 <h2><del>扫码登录获取 Cookie</del></h2>
-<p>程序自动获取抖音登录二维码，随后会在终端输出二维码，并使用系统默认图片浏览器打开二维码图片，使用者通过抖音 APP 扫码并登录账号，操作后关闭二维码图片窗口，程序会自动检查登录结果并将登录后的 Cookie 写入配置文件。</p>
+<p><del>程序自动获取抖音登录二维码，随后会在终端输出二维码，并使用系统默认图片浏览器打开二维码图片，使用者通过抖音 APP 扫码并登录账号，操作后关闭二维码图片窗口，程序会自动检查登录结果并将登录后的 Cookie 写入配置文件。</del></p>
 <p><b>注意：</b>扫码登录可能会导致抖音账号被风控，该功能仅限学习研究，未来可能禁用或移除该功能！</p>
 <h2>终端交互模式</h2>
 <p>功能最全面的模式，支持全部功能。</p>
@@ -822,7 +823,7 @@ built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
 <li><code>https://www.douyin.com/user/账号ID</code></li>
 <li><code>https://www.douyin.com/user/账号ID?modal_id=作品ID</code></li>
 </ul>
-<p>如果需要大批量采集账号作品，建议启用 <code>src/custom/function.py</code> 文件的 <code>suspend</code> 函数。</p>
+<p>如果需要大批量采集账号作品，建议启用 <code>src/custom/function.py</code> 文件的 <code>suspend</code> 方法。</p>
 <p><b>下载账号喜欢作品时需要使用已登录的 Cookie，否则程序可能无法正常获取账号消息！</b></p>
 <p>如果当前账号昵称或账号标识不是有效的文件夹名称时，程序会自动替换为账号 ID。</p>
 <p>每个账号的作品会下载至 <code>root</code> 参数路径下的账号文件夹，账号文件夹格式为 <code>UID123456789_mark_类型</code> 或者 <code>UID123456789_账号昵称_类型</code></p>
@@ -896,7 +897,7 @@ built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
 <li><code>https://www.douyin.com/collection/合集ID</code></li>
 <li><code>https://www.douyin.com/channel/分区ID?modal_id=作品ID</code></li>
 </ul>
-<p>如果需要大批量采集合集作品，建议启用 <code>src/custom/function.py</code> 文件的 <code>suspend</code> 函数。</p>
+<p>如果需要大批量采集合集作品，建议启用 <code>src/custom/function.py</code> 文件的 <code>suspend</code> 方法。</p>
 <p>如果当前合集标题或合集标识不是有效的文件夹名称时，程序会自动替换为合集 ID。</p>
 <p>每个合集的作品会下载至 <code>root</code> 参数路径下的合集文件夹，合集文件夹格式为 <code>MIX123456789_mark_合集作品</code> 或者 <code>MIX123456789_合集标题_合集作品</code></p>
 <h3>采集账号详细数据(抖音)</h3>
@@ -1084,15 +1085,13 @@ built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
 <p>无需输入任何内容；采集 <code>抖音热榜</code>、<code>娱乐榜</code>、<code>社会榜</code>、<code>挑战榜</code> 数据并储存至文件；必须设置 <code>storage_format</code> 参数才能正常使用。</p>
 <p>储存名称格式：<code>热榜数据_采集时间_热榜名称</code></p>
 <h3>批量下载话题作品(抖音)</h3>
-<p>敬请期待！</p>
+<p>暂不支持！</p>
 <h3>批量下载收藏作品(抖音)</h3>
 <p>无需输入任何内容；需要在配置文件写入已登录的 Cookie，并在 <code>owner_url</code> 参数填入对应的账号主页链接和账号标识（可选参数）；目前仅支持采集当前 Cookie 对应账号的收藏作品。</p>
 <p>文件夹格式为 <code>UID123456789_mark_收藏作品</code> 或者 <code>UID123456789_账号昵称_收藏作品</code></p>
 <h3>批量下载收藏夹作品(抖音)</h3>
 <p>无需输入任何内容；需要在配置文件写入已登录的 Cookie，程序会自动获取当前 Cookie 账号的收藏夹数据并展示，根据程序提示输入收藏夹序号下载对应收藏夹作品文件，输入 <code>ALL</code> 下载全部收藏夹作品。</p>
 <p>文件夹格式为 <code>CID123456789_收藏夹名称_收藏作品</code></p>
-<h3>批量下载短剧作品(抖音)</h3>
-<p>敬请期待！</p>
 <h3>批量下载账号作品(TikTok)</h3>
 <ol>
 <li>使用 <code>settings.json</code> 的 <code>accounts_urls_tiktok</code> 参数中的账号链接。</li>
@@ -1104,7 +1103,7 @@ built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
 <li><code>https://www.tiktok.com/@TikTok号</code></li>
 <li><code>https://www.tiktok.com/@TikTok号/video/作品ID</code></li>
 </ul>
-<p>如果需要大批量采集账号作品，建议启用 <code>src/custom/function.py</code> 文件的 <code>suspend</code> 函数。</p>
+<p>如果需要大批量采集账号作品，建议启用 <code>src/custom/function.py</code> 文件的 <code>suspend</code> 方法。</p>
 <p>如果当前账号昵称或账号标识不是有效的文件夹名称时，程序会自动替换为账号 ID。</p>
 <p>每个账号的作品会下载至 <code>root</code> 参数路径下的账号文件夹，账号文件夹格式为 <code>UID123456789_mark_类型</code> 或者 <code>UID123456789_账号昵称_类型</code></p>
 <h3>批量下载链接作品(TikTok)</h3>
@@ -1130,7 +1129,7 @@ built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
 <li><code>https://www.tiktok.com/@TikTok号/playlist/合辑信息</code></li>
 <li><code>https://www.tiktok.com/@TikTok号/collection/合辑信息</code></li>
 </ul>
-<p>如果需要大批量采集合集作品，建议启用 <code>src/custom/function.py</code> 文件的 <code>suspend</code> 函数。</p>
+<p>如果需要大批量采集合集作品，建议启用 <code>src/custom/function.py</code> 文件的 <code>suspend</code> 方法。</p>
 <p>如果当前合集标题或合集标识不是有效的文件夹名称时，程序会自动替换为合集 ID。</p>
 <p>每个合集的作品会下载至 <code>root</code> 参数路径下的合集文件夹，合集文件夹格式为 <code>MIX123456789_mark_合集作品</code> 或者 <code>MIX123456789_合集标题_合集作品</code></p>
 <h3>获取直播推流地址(TikTok)</h3>
@@ -1140,7 +1139,28 @@ built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
 <li><code>https://vt.tiktok.com/分享码/</code></li>
 <li><code>https://www.tiktok.com/@TikTok号/live</code></li>
 </ul>
-<p>TikTok 平台直播视频下载功能尚未开发完成，请自行使用第三方工具下载！</p>
+<p>下载说明：</p>
+<ul>
+<li>程序会询问用户是否下载直播视频，支持同时下载多个直播视频。</li>
+<li>程序调用 <code>ffmpeg</code> 下载直播时，关闭 TikTokDownloader 不会影响直播下载。</li>
+<li><del>程序调用内置下载器下载直播时，需要保持 TikTokDownloader 运行直到直播结束。</del></li>
+<li>程序询问是否下载直播时，输入直播清晰度或者对应序号即可下载，例如：下载最高清晰度输入 <code>FULL_HD1</code> 或者 <code>1</code> 均可。</li>
+<li><del>程序调用内置下载器下载的直播文件，视频时长会显示为直播总时长，实际视频内容从下载时间开始，靠后部分的片段无法播放。</del></li>
+<li>直播视频会下载至 <code>root</code> 参数路径下的 <code>Live</code> 文件夹。</li>
+<li>经测试，强行终止程序或 <code>ffmpeg</code> 并不会导致已下载文件丢失或损坏，但无法继续下载。</li>
+</ul>
+<h3>批量下载视频原画(TikTok)</h3>
+<p><strong>注意：本功能为实验性功能，依赖第三方 API 服务，可能不稳定或存在限制！</strong></p>
+<ol>
+<li>手动输入待采集的作品链接。</li>
+<li>输入文本文档路径，读取文件包含的作品链接。</li>
+</ol>
+<p>支持链接格式：</p>
+<ul>
+<li><code>https://vm.tiktok.com/分享码/</code></li>
+<li><code>https://www.tiktok.com/@TikTok号/video/作品ID</code></li>
+</ul>
+<p>作品会下载至 <code>root</code> 参数和 <code>folder_name</code> 参数拼接成的文件夹。</p>
 <h2>后台监测模式</h2>
 <p>敬请期待！</p>
 <h2>Web API 接口模式</h2>
@@ -1185,7 +1205,7 @@ print(response.json())
   "storage_format": "可选参数",
   "cookie": "可选参数",
   "dynamic_cover": "可选参数",
-  "original_cover": "可选参数",
+  "static_cover": "可选参数",
   "proxies": "可选参数",
   "download": "可选参数",
   "max_size": "可选参数",
@@ -1652,6 +1672,10 @@ A: 由于权限限制，您无法直接触发主仓库的 Actions。请通过 Fo
 <p><code>Set-Cookie</code> 的内容格式为：<code>ttwid=XXX; Path=/; Domain=tiktok.com; Max-Age=31536000; HttpOnly; Secure; SameSite=None</code>，复制时只需要复制 <code>ttwid=XXX</code> 部分，而不是复制全部内容！</p>
 <h2>采集数据而不下载文件</h2>
 <p>将配置文件的 <code>download</code> 参数设置为 <code>false</code>，并设置 <code>storage_format</code> 参数，程序将不会下载任何文件，仅采集数据。</p>
+<h2>请求超时：timed out</h2>
+<p>网络异常；如果您的网络需要使用代理才能访问 TikTok，请在配置文件设置 <code>proxy</code> 参数！</p>
+<h2>self 获取账号信息失败</h2>
+<p>请把配置文件的 <code>owner_url</code> 参数修改为实际的抖音主页链接，获取方式请查阅 <a href="https://github.com/JoeanAmier/TikTokDownloader/issues/416">issue</a></p>
 <h1>免责声明</h1>
 <ul>
 <li>使用者对本项目的使用由使用者自行决定，并自行承担风险。作者对使用者使用本项目所产生的任何损失、责任、或风险概不负责。</li>
